@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.IO;
 using System.Reflection;
 using System.Windows;
+using System.Windows.Controls;
+
 using Vlc.DotNet.Wpf;
 
 namespace Samples.Wpf.Advanced
@@ -55,7 +57,7 @@ namespace Samples.Wpf.Advanced
 
         private void OnForwardButtonClick(object sender, RoutedEventArgs e)
         {
-            if(this.control == null)
+            if (this.control == null)
             {
                 return;
             }

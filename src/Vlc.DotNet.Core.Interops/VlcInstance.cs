@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
@@ -16,7 +17,7 @@ namespace Vlc.DotNet.Core.Interops
         {
             if (Pointer != IntPtr.Zero)
                 myManager.ReleaseInstance(this);
-            base.Dispose(disposing);            
+            base.Dispose(disposing);
         }
 
         public static implicit operator IntPtr(VlcInstance instance)

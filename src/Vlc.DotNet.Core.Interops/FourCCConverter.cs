@@ -1,8 +1,8 @@
 ﻿namespace Vlc.DotNet.Core.Interops
 {
     using System;
-    using System.Text;
     using System.Runtime.InteropServices;
+    using System.Text;
 
     /// <summary>
     /// Converters for manipulating 4CC (4 char codes), used in libvlc to identify codecs
@@ -42,7 +42,7 @@
                    (UInt32)bytes[2] << 16 &
                    (UInt32)bytes[3] << 24;
         }
-        
+
         /// <summary>
         /// Converts a 4CC string representation to its UInt32 equivalent, and write it to the memory
         /// </summary>

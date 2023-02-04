@@ -28,5 +28,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// </param>
     [LibVlcFunction("libvlc_video_lock_cb")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void UnlockVideoCallback(IntPtr userData, IntPtr picture, [MarshalAs(UnmanagedType.LPArray, SizeConst = 5)]IntPtr[] planes);
+    public delegate void UnlockVideoCallback(IntPtr userData, IntPtr picture, [MarshalAs(UnmanagedType.LPArray, SizeConst = 5)] IntPtr[] planes);
 }

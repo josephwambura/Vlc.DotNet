@@ -1,10 +1,9 @@
 ﻿using System;
+
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
 {
-    using System.Runtime.InteropServices;
-
     public sealed partial class VlcManager
     {
         /// <summary>

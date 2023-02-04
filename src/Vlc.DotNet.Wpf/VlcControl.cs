@@ -9,7 +9,7 @@ namespace Vlc.DotNet.Wpf
     /// <summary>
     /// The Wpf component that allows to display a video in a Wpf way
     /// </summary>
-    public class VlcControl: UserControl, IDisposable
+    public class VlcControl : UserControl, IDisposable
     {
         /// <summary>
         /// The Viewbox that contains the video image
@@ -43,7 +43,7 @@ namespace Vlc.DotNet.Wpf
                 sourceProvider.IsAlphaChannelEnabled = value;
             }
         }
-        
+
         /// <summary>
         /// The constructor
         /// </summary>

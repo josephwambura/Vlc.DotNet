@@ -9,7 +9,7 @@ namespace Vlc.DotNet.Forms
 
         public VlcLibDirectoryNeededEventArgs()
         {
-            
+
         }
     }
 }

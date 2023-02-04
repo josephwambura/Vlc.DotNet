@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Vlc.DotNet.Core.Interops
+﻿namespace Vlc.DotNet.Core.Interops
 {
     public static class VlcMediaInstanceExtensions
     {

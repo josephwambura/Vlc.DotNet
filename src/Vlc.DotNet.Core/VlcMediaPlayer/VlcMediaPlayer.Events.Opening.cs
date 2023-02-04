@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core

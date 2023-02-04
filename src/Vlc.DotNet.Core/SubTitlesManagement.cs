@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+
 using Vlc.DotNet.Core.Interops;
-using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core
 {

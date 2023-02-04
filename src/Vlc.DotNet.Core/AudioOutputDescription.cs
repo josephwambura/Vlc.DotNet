@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using Vlc.DotNet.Core.Interops;
 
 namespace Vlc.DotNet.Core

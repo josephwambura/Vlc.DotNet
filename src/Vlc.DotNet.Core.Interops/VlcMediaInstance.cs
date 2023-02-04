@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
@@ -36,7 +37,7 @@ namespace Vlc.DotNet.Core.Interops
             {
                 AllInstances.Remove(this);
             }
-            
+
             if (Pointer != IntPtr.Zero)
                 myManager.ReleaseMedia(this);
             base.Dispose(disposing);

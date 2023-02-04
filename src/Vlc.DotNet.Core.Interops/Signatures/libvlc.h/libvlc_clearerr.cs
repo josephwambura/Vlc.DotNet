@@ -8,5 +8,5 @@ namespace Vlc.DotNet.Core.Interops.Signatures
     /// <returns>Return the libvlc instance or NULL in case of error.</returns>
     [LibVlcFunction("libvlc_clearerr")]
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    internal delegate void ClearLastErrorMessage(); 
+    internal delegate void ClearLastErrorMessage();
 }

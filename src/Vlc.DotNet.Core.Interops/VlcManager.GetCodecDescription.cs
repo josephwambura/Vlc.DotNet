@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops
@@ -18,7 +19,7 @@ namespace Vlc.DotNet.Core.Interops
             {
                 throw new InvalidOperationException($"You need VLC version 3.0 or higher to be able to use {nameof(GetCodecDescription)}");
             }
-            
+
             var ptr = myLibraryLoader.GetInteropDelegate<GetCodecDescription>().Invoke(type, codec);
             return Utf8InteropStringConverter.Utf8InteropToString(ptr);
         }

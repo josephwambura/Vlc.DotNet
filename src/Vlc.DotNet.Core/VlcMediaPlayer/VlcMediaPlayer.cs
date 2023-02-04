@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+
 using Vlc.DotNet.Core.Interops;
 using Vlc.DotNet.Core.Interops.Signatures;
 
@@ -309,7 +310,7 @@ namespace Vlc.DotNet.Core
             Manager.Navigate(myMediaPlayerInstance, navigateMode);
         }
 
-        public ISubTitlesManagement SubTitles { get;  }
+        public ISubTitlesManagement SubTitles { get; }
 
         public IVideoManagement Video { get; }
 

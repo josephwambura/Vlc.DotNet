@@ -9,9 +9,11 @@ namespace Vlc.DotNet.Forms.TypeEditors
     {
         public override object EditValue(ITypeDescriptorContext context, IServiceProvider provider, object value)
         {
-            var folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            folderBrowserDialog.Description = "Select Vlc libraries folder.";
-            folderBrowserDialog.RootFolder = Environment.SpecialFolder.Desktop;
+            var folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog
+            {
+                Description = "Select Vlc libraries folder.",
+                RootFolder = Environment.SpecialFolder.Desktop
+            };
             if (value != null)
                 folderBrowserDialog.SelectedPath = value.ToString();
             folderBrowserDialog.ShowNewFolderButton = true;

@@ -5,6 +5,7 @@ namespace Vlc.DotNet.Core
     using System;
     using System.Threading;
     using System.Threading.Tasks;
+
     using Vlc.DotNet.Core.Interops.Signatures;
 
     public class LoginResult

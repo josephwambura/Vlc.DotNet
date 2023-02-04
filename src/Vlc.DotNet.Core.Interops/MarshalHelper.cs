@@ -1,6 +1,35 @@
 ﻿using System;
+
+/* Unmerged change from project 'Vlc.DotNet.Core.Interops (netstandard2.0)'
+Before:
 using System.Runtime.InteropServices;
 using Vlc.DotNet.Core.Interops.Signatures;
+After:
+using System.Runtime.InteropServices;
+
+using Vlc.DotNet.Core.Interops.Signatures;
+*/
+
+/* Unmerged change from project 'Vlc.DotNet.Core.Interops (netstandard1.3)'
+Before:
+using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Signatures;
+After:
+using System.Runtime.InteropServices;
+
+using Vlc.DotNet.Core.Interops.Signatures;
+*/
+
+/* Unmerged change from project 'Vlc.DotNet.Core.Interops (net7.0)'
+Before:
+using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops.Signatures;
+After:
+using System.Runtime.InteropServices;
+
+using Vlc.DotNet.Core.Interops.Signatures;
+*/
+using System.Runtime.InteropServices;
 
 namespace Vlc.DotNet.Core.Interops
 {
@@ -15,7 +44,7 @@ namespace Vlc.DotNet.Core.Interops
         /// <typeparam name="T">The type of structure to convert</typeparam>
         /// <param name="ptr">The pointer</param>
         /// <returns>The converted structure</returns>
-        public static T PtrToStructure<T>(IntPtr ptr) where T: struct
+        public static T PtrToStructure<T>(IntPtr ptr) where T : struct
         {
 #if NET35 || NET40 || NET45
             return (T)Marshal.PtrToStructure(ptr, typeof(T));

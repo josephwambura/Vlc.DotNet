@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Vlc.DotNet.Core;
 using Vlc.DotNet.Forms;
 
@@ -82,12 +83,12 @@ namespace Samples.WinForms.MultiplePlayers
             {
                 var player = new VlcControl
                 {
-                    VlcLibDirectory = new DirectoryInfo(this.vlcLibraryPath), 
+                    VlcLibDirectory = new DirectoryInfo(this.vlcLibraryPath),
                     Size = new Size(200, 200)
                 };
 
                 var uiUpdatedTask = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
-                panel.BeginInvoke( (MethodInvoker) delegate
+                panel.BeginInvoke((MethodInvoker)delegate
                 {
                     panel.Controls.Add(player);
                     player.EndInit();
@@ -95,7 +96,7 @@ namespace Samples.WinForms.MultiplePlayers
                 });
 
                 await uiUpdatedTask.Task.ConfigureAwait(false);
-                
+
                 lock (listOfControls)
                 {
                     // Add to a list
@@ -125,7 +126,7 @@ namespace Samples.WinForms.MultiplePlayers
             await Task.Run(() =>
             {
                 AutoResetEvent uiUpdated = new AutoResetEvent(false);
-                
+
                 lock (listOfControls)
                 {
                     // Do nothing if nothing to remove
@@ -138,7 +139,7 @@ namespace Samples.WinForms.MultiplePlayers
                     UnhookEvents(player);
 
                     // Remove player from the Panel in the Ui thread.
-                    panel.BeginInvoke( (MethodInvoker) delegate
+                    panel.BeginInvoke((MethodInvoker)delegate
                     {
                         // Remove the control player.
                         panel.Controls.Remove(player);
@@ -149,19 +150,19 @@ namespace Samples.WinForms.MultiplePlayers
 
                     // wait for the panel to remove the player from the ui on its thread.
                     uiUpdated.WaitOne();
-                    
+
                     // Remove player from the list
                     listOfControls.Remove(player);
 
                     // Only left to dispose the player, let the player do it on its own thread when it needs to.
-                    panel.BeginInvoke( (MethodInvoker) delegate
+                    panel.BeginInvoke((MethodInvoker)delegate
                     {
                         player.Dispose();
                     });
                 }
             });
         }
-        
+
         /// <summary>
         /// Hook to some events of the given player.
         /// </summary>
@@ -172,7 +173,7 @@ namespace Samples.WinForms.MultiplePlayers
             player.EncounteredError += Player_EncounteredError;
             player.Buffering += PlayerOnBuffering;
             player.Playing += PlayerOnPlaying;
-            player.TimeChanged +=  PlayerOnTimeChanged;
+            player.TimeChanged += PlayerOnTimeChanged;
             player.Opening += PlayerOnOpening;
             player.MouseClick += PlayerOnMouseClick;
         }
@@ -186,11 +187,11 @@ namespace Samples.WinForms.MultiplePlayers
             player.EncounteredError -= Player_EncounteredError;
             player.Buffering -= PlayerOnBuffering;
             player.Playing -= PlayerOnPlaying;
-            player.TimeChanged -=  PlayerOnTimeChanged;
+            player.TimeChanged -= PlayerOnTimeChanged;
             player.Opening -= PlayerOnOpening;
             player.MouseClick -= PlayerOnMouseClick;
         }
-        
+
         /// <summary>
         /// Event handler for mouse click on player.
         /// </summary>
@@ -199,7 +200,7 @@ namespace Samples.WinForms.MultiplePlayers
         private void PlayerOnMouseClick(object sender, MouseEventArgs e)
         {
             Console.WriteLine(@"Click = " + numberOfClicks++);
-            
+
         }
 
         /// <summary>

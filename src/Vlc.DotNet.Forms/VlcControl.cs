@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using System.IO;
 using System.Windows.Forms;
+
 using Vlc.DotNet.Core;
 using Vlc.DotNet.Core.Interops.Signatures;
 using Vlc.DotNet.Forms.TypeEditors;
@@ -52,7 +53,8 @@ namespace Vlc.DotNet.Forms
         private DirectoryInfo _vlcLibDirectory = null;
         [Category("Media Player")]
         [Editor(typeof(DirectoryEditor), typeof(UITypeEditor))]
-        public DirectoryInfo VlcLibDirectory {
+        public DirectoryInfo VlcLibDirectory
+        {
             get { return this._vlcLibDirectory; }
             set
             {
@@ -228,11 +230,7 @@ namespace Vlc.DotNet.Forms
         public void Stop()
         {
             //EndInit();
-            if (myVlcMediaPlayer != null)
-            {
-                myVlcMediaPlayer.Stop();
-            }
-
+            myVlcMediaPlayer?.Stop();
         }
 
         public VlcMedia GetCurrentMedia()
@@ -494,7 +492,7 @@ namespace Vlc.DotNet.Forms
             //EndInit();
             myVlcMediaPlayer.SetMedia(file, options);
         }
-        
+
         public void SetMedia(string mrl, params string[] options)
         {
             //EndInit();

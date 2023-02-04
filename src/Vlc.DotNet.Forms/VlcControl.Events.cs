@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+
 using Vlc.DotNet.Core;
 
 namespace Vlc.DotNet.Forms
@@ -67,9 +68,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Backward;
-                if (del != null)
-                    del(this, new VlcMediaPlayerBackwardEventArgs());
+                Backward?.Invoke(this, new VlcMediaPlayerBackwardEventArgs());
             }
         }
         #endregion
@@ -87,9 +86,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Buffering;
-                if (del != null)
-                    del(this, new VlcMediaPlayerBufferingEventArgs(newCache));
+                Buffering?.Invoke(this, new VlcMediaPlayerBufferingEventArgs(newCache));
             }
         }
         #endregion
@@ -107,9 +104,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = EncounteredError;
-                if (del != null)
-                    del(this, new VlcMediaPlayerEncounteredErrorEventArgs());
+                EncounteredError?.Invoke(this, new VlcMediaPlayerEncounteredErrorEventArgs());
             }
         }
         #endregion
@@ -127,9 +122,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = EndReached;
-                if (del != null)
-                    del(this, new VlcMediaPlayerEndReachedEventArgs());
+                EndReached?.Invoke(this, new VlcMediaPlayerEndReachedEventArgs());
             }
         }
         #endregion
@@ -147,9 +140,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Forward;
-                if (del != null)
-                    del(this, new VlcMediaPlayerForwardEventArgs());
+                Forward?.Invoke(this, new VlcMediaPlayerForwardEventArgs());
             }
         }
         #endregion
@@ -167,9 +158,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = LengthChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerLengthChangedEventArgs(newLength));
+                LengthChanged?.Invoke(this, new VlcMediaPlayerLengthChangedEventArgs(newLength));
             }
         }
         #endregion
@@ -181,7 +170,7 @@ namespace Vlc.DotNet.Forms
 
         private void OnLogInternal(object sender, VlcMediaPlayerLogEventArgs args)
         {
-            lock(this._logLocker)
+            lock (this._logLocker)
             {
                 if (this.log != null)
                 {
@@ -232,9 +221,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = MediaChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerMediaChangedEventArgs(newMedia));
+                MediaChanged?.Invoke(this, new VlcMediaPlayerMediaChangedEventArgs(newMedia));
             }
         }
         #endregion
@@ -252,9 +239,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Opening;
-                if (del != null)
-                    del(this, new VlcMediaPlayerOpeningEventArgs());
+                Opening?.Invoke(this, new VlcMediaPlayerOpeningEventArgs());
             }
         }
         #endregion
@@ -272,9 +257,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = PausableChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerPausableChangedEventArgs(isPaused));
+                PausableChanged?.Invoke(this, new VlcMediaPlayerPausableChangedEventArgs(isPaused));
             }
         }
 
@@ -293,9 +276,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Paused;
-                if (del != null)
-                    del(this, new VlcMediaPlayerPausedEventArgs());
+                Paused?.Invoke(this, new VlcMediaPlayerPausedEventArgs());
             }
         }
         #endregion
@@ -313,9 +294,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Playing;
-                if (del != null)
-                    del(this, new VlcMediaPlayerPlayingEventArgs());
+                Playing?.Invoke(this, new VlcMediaPlayerPlayingEventArgs());
             }
         }
 
@@ -334,9 +313,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = PositionChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerPositionChangedEventArgs(newPosition));
+                PositionChanged?.Invoke(this, new VlcMediaPlayerPositionChangedEventArgs(newPosition));
             }
         }
         #endregion
@@ -354,9 +331,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = ScrambledChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerScrambledChangedEventArgs(newScrambled));
+                ScrambledChanged?.Invoke(this, new VlcMediaPlayerScrambledChangedEventArgs(newScrambled));
             }
         }
 
@@ -375,9 +350,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = SeekableChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerSeekableChangedEventArgs(newSeekable));
+                SeekableChanged?.Invoke(this, new VlcMediaPlayerSeekableChangedEventArgs(newSeekable));
             }
         }
         #endregion
@@ -395,9 +368,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = SnapshotTaken;
-                if (del != null)
-                    del(this, new VlcMediaPlayerSnapshotTakenEventArgs(fileName));
+                SnapshotTaken?.Invoke(this, new VlcMediaPlayerSnapshotTakenEventArgs(fileName));
             }
         }
 
@@ -416,9 +387,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = TimeChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerTimeChangedEventArgs(newTime));
+                TimeChanged?.Invoke(this, new VlcMediaPlayerTimeChangedEventArgs(newTime));
             }
         }
         #endregion
@@ -436,9 +405,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = TitleChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerTitleChangedEventArgs(newTitle));
+                TitleChanged?.Invoke(this, new VlcMediaPlayerTitleChangedEventArgs(newTitle));
             }
         }
         #endregion
@@ -456,9 +423,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = Stopped;
-                if (del != null)
-                    del(this, new VlcMediaPlayerStoppedEventArgs());
+                Stopped?.Invoke(this, new VlcMediaPlayerStoppedEventArgs());
             }
         }
         #endregion
@@ -476,9 +441,7 @@ namespace Vlc.DotNet.Forms
         {
             lock (myEventSyncLocker)
             {
-                var del = VideoOutChanged;
-                if (del != null)
-                    del(this, new VlcMediaPlayerVideoOutChangedEventArgs(newCount));
+                VideoOutChanged?.Invoke(this, new VlcMediaPlayerVideoOutChangedEventArgs(newCount));
             }
         }
         #endregion

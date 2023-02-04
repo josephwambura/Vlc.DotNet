@@ -1,5 +1,4 @@
 ﻿using Vlc.DotNet.Core.Interops;
-using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core
 {
@@ -17,7 +16,7 @@ namespace Vlc.DotNet.Core
             Logo = new LogoManagement(manager, mediaPlayerInstance);
             Adjustments = new AdjustmentsManagement(manager, mediaPlayerInstance);
         }
-        
+
         public string AspectRatio
         {
             get { return myManager.GetVideoAspectRatio(myMediaPlayer); }
@@ -26,7 +25,7 @@ namespace Vlc.DotNet.Core
 
         public string CropGeometry
         {
-            get { return myManager.GetVideoCropGeometry(myMediaPlayer);  }
+            get { return myManager.GetVideoCropGeometry(myMediaPlayer); }
             set { myManager.SetVideoCropGeometry(myMediaPlayer, value); }
         }
 

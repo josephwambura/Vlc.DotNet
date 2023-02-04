@@ -2,9 +2,9 @@
 #if !NET35
 using System.Collections.Concurrent;
 #endif
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
+
 using Vlc.DotNet.Core.Interops.Signatures;
 
 namespace Vlc.DotNet.Core.Interops

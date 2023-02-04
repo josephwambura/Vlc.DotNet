@@ -10,7 +10,7 @@ namespace Vlc.DotNet.Core.Interops.Signatures
         public IntPtr Description;
         public IntPtr NextAudioOutputDescription;
     }
-    
+
     public struct AudioOutputDescriptionStructure
     {
         public string Name;

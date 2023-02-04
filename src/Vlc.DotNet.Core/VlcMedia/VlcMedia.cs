@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+
 using Vlc.DotNet.Core.Interops;
 using Vlc.DotNet.Core.Interops.Signatures;
 
@@ -18,7 +19,7 @@ namespace Vlc.DotNet.Core
             : this(player, player.Manager.CreateNewMediaFromLocation(uri.AbsoluteUri).AddOptionToMedia(player.Manager, options))
         {
         }
-        
+
         internal VlcMedia(VlcMediaPlayer player, string mrl, params string[] options)
             : this(player, player.Manager.CreateNewMediaFromLocation(mrl).AddOptionToMedia(player.Manager, options))
         {

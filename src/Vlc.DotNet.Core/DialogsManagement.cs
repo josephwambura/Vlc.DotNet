@@ -5,8 +5,9 @@ namespace Vlc.DotNet.Core
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
-    using Vlc.DotNet.Core.Interops.Signatures;
+
     using Vlc.DotNet.Core.Interops;
+    using Vlc.DotNet.Core.Interops.Signatures;
 
     public class DialogsManagement : IDialogsManagement
     {
@@ -67,7 +68,7 @@ namespace Vlc.DotNet.Core
             string strText = Utf8InteropStringConverter.Utf8InteropToString(text);
             string strUsername = Utf8InteropStringConverter.Utf8InteropToString(defaultusername);
             var cts = new CancellationTokenSource();
-            this.openDialogsCancellationTokens.Add(dialogid,cts);
+            this.openDialogsCancellationTokens.Add(dialogid, cts);
             Task.Run(() => this.currentDialogManager.DisplayLoginAsync(userdata, dialogid, strTitle, strText, strUsername, askstore, cts.Token))
                 .ContinueWith(task =>
                 {
@@ -79,7 +80,7 @@ namespace Vlc.DotNet.Core
                             this.myManager.PostLogin(dialogid, usr, pass, task.Result.StoreCredentials);
                         }
                     }
-                    else if(!task.IsCanceled)
+                    else if (!task.IsCanceled)
                     {
                         this.myManager.DismissDialog(dialogid);
                     }

@@ -2,10 +2,12 @@
 {
     using MahApps.Metro.Controls;
     using MahApps.Metro.Controls.Dialogs;
+
     using System;
     using System.Threading;
     using System.Threading.Tasks;
     using System.Windows;
+
     using Vlc.DotNet.Core;
     using Vlc.DotNet.Core.Interops.Signatures;
 
@@ -46,7 +48,7 @@
             // Invokes the ShowMessageAsync function on the dispatcher and waits for it to finish asynchronously.
             return this.metroWindow.Dispatcher.InvokeAsync(() => this.metroWindow.ShowMessageAsync(title, text)).Task.Unwrap();
         }
-        
+
         /// <summary>
         /// Displays a login dialog.
         /// 
@@ -139,7 +141,7 @@
 
                 var taskCompletionSource = new TaskCompletionSource<bool>();
                 // Case 1 : libvlc asks to close the progress dialog
-                var onCancellationTokenCancelled = (Action) (() =>
+                var onCancellationTokenCancelled = (Action)(() =>
                 {
                     taskCompletionSource.TrySetResult(false);
                 });
@@ -227,7 +229,7 @@
                 auxiliaryAction1 = action2Button;
                 negativeButtonText = cancelButton;
             }
-            else if(action1Button != null)
+            else if (action1Button != null)
             {
                 dialogStyle = MessageDialogStyle.AffirmativeAndNegative;
                 affirmativeButtonText = action1Button;
@@ -240,7 +242,7 @@
                 affirmativeButtonText = action2Button;
                 negativeButtonText = cancelButton;
             }
-            
+
             var result = await this.metroWindow.Dispatcher.InvokeAsync(() => this.metroWindow.ShowMessageAsync(title, text, dialogStyle, new MetroDialogSettings
             {
                 CancellationToken = cancellationToken,

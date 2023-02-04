@@ -17,7 +17,7 @@ namespace Vlc.DotNet.Core.Interops
     /// Use <see cref="GetOrCreateLoader" /> and <see cref="ReleaseLoader"/> to get a VlcLibraryLoader instance and release it properly.
     /// Do not call Dispose() by yourself, it will be called as needed by ReleaseLoader.
     /// </summary>
-    internal class VlcLibraryLoader: IDisposable
+    internal class VlcLibraryLoader : IDisposable
     {
         private static Dictionary<string, VlcLibraryLoader> myLoaderInstances = new Dictionary<string, VlcLibraryLoader>();
 

@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+
 using Vlc.DotNet.Core;
 using Vlc.DotNet.Core.Interops;
 using Vlc.DotNet.Core.Interops.Signatures;
 using Vlc.DotNet.Forms;
-
-using System.Linq;
-using System.Collections.Generic;
 
 namespace Samples.WinForms.Advanced
 {
@@ -217,7 +216,7 @@ namespace Samples.WinForms.Advanced
 
         private void myVlcControl_MouseClick(object sender, MouseEventArgs e)
         {
-            myVlcControl.Focus();            
+            myVlcControl.Focus();
         }
 
         private void myVlcControl_MouseDown(object sender, MouseEventArgs e)
@@ -239,7 +238,7 @@ namespace Samples.WinForms.Advanced
 
         private void myBtnEnableMouseEvents_Click(object sender, EventArgs e)
         {
-            myVlcControl.Video.IsMouseInputEnabled= true;
+            myVlcControl.Video.IsMouseInputEnabled = true;
             myVlcControl.Video.IsKeyInputEnabled = true;
         }
     }

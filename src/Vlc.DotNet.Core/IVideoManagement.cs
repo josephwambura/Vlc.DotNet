@@ -17,6 +17,6 @@
         /// Gets or set the fullscreen mode for the player.
         /// <c>true</c> if the player is playing fullscreen
         /// </summary>
-        bool FullScreen { get;  set; }
+        bool FullScreen { get; set; }
     }
 }

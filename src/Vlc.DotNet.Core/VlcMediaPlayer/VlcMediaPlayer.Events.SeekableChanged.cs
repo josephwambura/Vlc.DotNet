@@ -1,5 +1,35 @@
 ﻿using System;
+/* Unmerged change from project 'Vlc.DotNet.Core (netstandard2.0)'
+Before:
 using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops;
+After:
+using System.Runtime.InteropServices;
+
+using Vlc.DotNet.Core.Interops;
+*/
+
+/* Unmerged change from project 'Vlc.DotNet.Core (netstandard1.3)'
+Before:
+using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops;
+After:
+using System.Runtime.InteropServices;
+
+using Vlc.DotNet.Core.Interops;
+*/
+
+/* Unmerged change from project 'Vlc.DotNet.Core (net7.0)'
+Before:
+using System.Runtime.InteropServices;
+using Vlc.DotNet.Core.Interops;
+After:
+using System.Runtime.InteropServices;
+
+using Vlc.DotNet.Core.Interops;
+*/
+
+
 using Vlc.DotNet.Core.Interops;
 using Vlc.DotNet.Core.Interops.Signatures;
 

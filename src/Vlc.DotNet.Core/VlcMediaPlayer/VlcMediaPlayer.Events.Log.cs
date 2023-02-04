@@ -1,10 +1,13 @@
 ﻿using System;
+
 using Vlc.DotNet.Core.Interops.Signatures;
+
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
+
 #if NETSTANDARD1_3 || NETSTANDARD2_0 || NET45
 using System.Threading.Tasks;
+
 #endif
 using Vlc.DotNet.Core.Interops;
 
@@ -61,7 +64,7 @@ namespace Vlc.DotNet.Core
                 var utf8Buffer = Marshal.AllocHGlobal(byteLength);
 
                 string formattedDecodedMessage;
-                try 
+                try
                 {
                     Win32Interops.vsprintf(utf8Buffer, format, args);
                     formattedDecodedMessage = Utf8InteropStringConverter.Utf8InteropToString(utf8Buffer);
@@ -78,9 +81,9 @@ namespace Vlc.DotNet.Core
 
                 // Do the notification on another thread, so that VLC is not interrupted by the logging
 #if NETSTANDARD1_3 || NETSTANDARD2_0 || NET45
-                Task.Run(() => 
+                Task.Run(() =>
                 {
-                    if(this.log != null)
+                    if (this.log != null)
                         this.log(this.myMediaPlayerInstance, new VlcMediaPlayerLogEventArgs(level, formattedDecodedMessage, module, file, line));
                 });
 #else

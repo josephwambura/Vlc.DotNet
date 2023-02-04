@@ -1,4 +1,13 @@
-﻿using System.Linq;
+﻿
+/* Unmerged change from project 'Vlc.DotNet.Wpf (net48)'
+Before:
+using System.Linq;
+using Vlc.DotNet.Core.Interops;
+After:
+using System.Linq;
+
+using Vlc.DotNet.Core.Interops;
+*/
 using Vlc.DotNet.Core.Interops;
 using Vlc.DotNet.Core.Interops.Signatures;
 
@@ -10,9 +19,10 @@ namespace Vlc.DotNet.Wpf
     using System.IO.MemoryMappedFiles;
 #endif
     using System.Runtime.InteropServices;
-    using System.Windows;
     using System.Windows.Media;
+
     using Vlc.DotNet.Core;
+
     using System.Windows.Interop;
     using System.ComponentModel;
     using System.Windows.Threading;
@@ -83,7 +93,9 @@ namespace Vlc.DotNet.Wpf
         /// <summary>
         /// Defines if <see cref="VideoSource"/> pixel format is <see cref="PixelFormats.Bgr32"/> or <see cref="PixelFormats.Bgra32"/>
         /// </summary>
-        public bool IsAlphaChannelEnabled { get
+        public bool IsAlphaChannelEnabled
+        {
+            get
             {
                 return this.isAlphaChannelEnabled;
             }
@@ -146,7 +158,7 @@ namespace Vlc.DotNet.Wpf
         {
             var pixelFormat = IsAlphaChannelEnabled ? PixelFormats.Bgra32 : PixelFormats.Bgr32;
             FourCCConverter.ToFourCC("RV32", chroma);
-            
+
             //Correct video width and height according to TrackInfo
             var md = MediaPlayer.GetMedia();
             foreach (MediaTrack track in md.Tracks)

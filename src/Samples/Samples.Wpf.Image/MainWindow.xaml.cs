@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
+
 using Vlc.DotNet.Wpf;
 
 namespace Samples.Wpf.Image
@@ -25,8 +26,8 @@ namespace Samples.Wpf.Image
             this.sourceProvider.MediaPlayer.Play(new Uri("http://download.blender.org/peach/bigbuckbunny_movies/big_buck_bunny_480p_surround-fix.avi"));
 
             this.Video.SetBinding(System.Windows.Controls.Image.SourceProperty,
-                new Binding(nameof(VlcVideoSourceProvider.VideoSource)) {Source = sourceProvider});
-            
+                new Binding(nameof(VlcVideoSourceProvider.VideoSource)) { Source = sourceProvider });
+
             this.BackgroundVideo.SetBinding(System.Windows.Controls.Image.SourceProperty,
                 new Binding(nameof(VlcVideoSourceProvider.VideoSource)) { Source = sourceProvider });
         }

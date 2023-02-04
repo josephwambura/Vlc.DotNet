@@ -12,7 +12,7 @@ namespace Vlc.DotNet.Core.Interops.Signatures
         Warning,
         Critical
     }
-    
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void ErrorDialogCallback(IntPtr userData, IntPtr title, IntPtr text);
 
