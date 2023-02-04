@@ -3,7 +3,7 @@
 
   <PropertyGroup>
     <Title>Vlc.DotNet.Wpf</Title>
-    <TargetFrameworks>net48;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net48;net7.0-windows</TargetFrameworks>
     <Description>WPF control that hosts the audio/video capabilities of the VLC libraries.</Description>
     <PackageTags>vlc media wpf</PackageTags>
     <UseWPF>true</UseWPF>

@@ -3,7 +3,7 @@
   
   <PropertyGroup>
     <Title>Vlc.DotNet.Forms</Title>
-    <TargetFrameworks>net48;netcoreapp3.0</TargetFrameworks>
+    <TargetFrameworks>net48;net7.0-windows</TargetFrameworks>
     <Description>WinForm control that hosts the audio/video capabilities of the VLC libraries.</Description>
     <PackageTags>vlc media winform</PackageTags>
     <UseWindowsForms>true</UseWindowsForms>

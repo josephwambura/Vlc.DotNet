@@ -2,10 +2,10 @@
   <PropertyGroup>
     <VersionPrefix>0.0</VersionPrefix>
     <Product>Vlc.DotNet</Product>
-    <Copyright>Copyright © Vlc.DotNet 2014-2017</Copyright>
-    <Authors>ZeBobo5</Authors>
-    <PackageProjectUrl>https://github.com/ZeBobo5/Vlc.DotNet</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/ZeBobo5/Vlc.DotNet</RepositoryUrl>
+    <Copyright>Copyright © Vlc.DotNet 2014-2023</Copyright>
+    <Authors>ZeBobo5, Joseph Wambura</Authors>
+    <PackageProjectUrl>https://github.com/josephwambura/Vlc.DotNet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/josephwambura/Vlc.DotNet</RepositoryUrl>
     <PackageIcon>logo.png</PackageIcon>
   </PropertyGroup>
   <PropertyGroup>
